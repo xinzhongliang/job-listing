@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <div class="group">
+    <span class="pull-right">
+
+    </span>
+    <%=# link_to("Write a Post", new_job_post_path(@group), class: "btn btn-default pull-right") %>
+    <%# if current_user && current_user == @job.user %>
+    <%= link_to("Edit", edit_job_path(@job), class: "btn btn-primary pull-right") %>
+    <%# end %>
+  </div>
+  <h2><%= @job.title %></h2>
+  <p><%= @job.description %></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>文章内容</th>
+        <th>发表者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |post| %>
+      <tr>
+        <td><%= job.content %></td>
+        <td><%= job.user.email %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= will_paginate @jobs %>
+  </div>
+</div>
