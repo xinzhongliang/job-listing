@@ -13,7 +13,7 @@ create_account = User.create([email: 'example@gmail.com', password: '12345678', 
 puts "Admin account created."
 
 Job.create!([title: "外包小团队招募一名 ROR 全职工程师 (16K)", description: %{
-    主要工作内容包括：
+主要工作内容包括：
 
 完善数据分析平台，包括增加和完善功能，修复bug 数据保障，编写数据监控的脚本，做数据迁移 针对不同的客户，定制不同的portal 其他一些零碎的工作
 
@@ -32,9 +32,12 @@ puts "第一个工作（Public）建立成功."
 puts "这是用种子建立的第二个工作."
 Job.create!([title: "Ruby on Rails 资深开发工程师", description: %{
 职位描述
+
 1. 开发基于开源 Rails 框架的数字资产交易所 ；
 2. 开发区块链项目 Web 应用与项目；
+
 任职要求
+
 1. 本科，3 年以上工作经验；
 2. 熟悉 Ruby 语言开发,3年以上 Web 开发经验；
 3. 熟悉 RubyOnRails 框架，有完整的 Rails 网站 WEB 系统开发经验；
@@ -55,6 +58,7 @@ puts "第二个工作（Public）建立成功."
 
 puts "这是用种子建立的第三个工作."
 Job.create!([title: "Senior Ruby on Rails Software Engineer", description: %{
+
 Requirements:
 
   Core Skills
@@ -64,6 +68,7 @@ Requirements:
   Communicate effectively in English (spoken & written)
   Able to work efficiently by yourself and with a team of coworkers
   Willingness to learn
+
   Basic Skills
 
   2+ years of Ruby on Rails experience (3.0+)
@@ -73,11 +78,14 @@ Requirements:
   Bonus Skills
 
   Knowledge of server deployment strategies (Capistrano, MINA)
+
   Knowledge of at least one Javascript MVC framework (Angular JS, Ember.js, etc.)
   Experience leading a small to medium size team of engineers
+
   Responsibilities:
 
   The majority of your time will be spent coding
+
   Mentoring Junior Software Engineers by providing advice and pair programming
   Leading development of small to medium scale projects, providing architecture planning and analysis
   Working with a Project Manager to provide estimates for client requested features
@@ -95,12 +103,14 @@ Job.create!([title: "全栈开发工程师/Ruby高级开发工程师", descripti
 岗位职责：
 
 负责投融资平台的开发、维护和部署
+
 任职资格：
 
 拥有 2 年以上 Ruby on Rails 项目经验
 了解 Nginx/MySQL/Linux 等
 熟练运用 git, 具备优秀的团队合作能力
 具有较强的抽象思维能力
+
 加分项：
 
 如果应聘全栈工程师熟悉至少一种前端 MVC 框架，包括但不限于 AngularJS 、 React 、 Vue.js
@@ -121,6 +131,7 @@ Job.create!([title: "全职 Ruby and Ruby On Rails 高级工程师", description
 参与项目架构和功能设计；
 撰写相关技术文档；
 跟踪分析用户反馈，提高产品质量，优化用户体验。
+
 任职资格
 
 熟悉网络模型，熟悉HTTP协议
@@ -133,6 +144,7 @@ Job.create!([title: "全职 Ruby and Ruby On Rails 高级工程师", description
 有技术博客、GitHub 帐号者优先
 对工作有极高的热情，踏实、勤奋；具有创造力、活力
 优秀的团队协作能力、沟通能力、自学能力以及较强的责任心
+
 薪资和福利
 
 月薪5K-10K，具体根据个人能力而定
@@ -158,12 +170,14 @@ Job.create!([title: "招聘 Ruby 工程师 ( 15～ 25k)", description: %{
   有基本的前端知识, 包括 HTML, CSS, Javascript 等
   熟悉 Git 协作流程
   良好的编码习惯
+
   加分项：
 
   喜欢折腾 Linux
   关注 hacker news
   愿意尝试新的技术 /语言
   其他技术栈： https://stackshare.io/geekpark
+
   我们能提供什么？
 
   内部分享会
@@ -194,6 +208,7 @@ Job.create!([title: "招聘Ruby工程师2人", description: %{
   熟悉Redis、MemCached等缓存框架;
   熟悉HTML 5、CSS 3、jQuery、Bootstrap及数据库安全知识，并在设 计开发中落地;
   有Java、C++、Python语言编程经验者优先；
+
   我们的福利待遇#
 
   15K-20K
