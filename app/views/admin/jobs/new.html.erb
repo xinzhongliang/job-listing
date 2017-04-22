@@ -4,7 +4,7 @@
 <%= simple_form_for [:admin,@job] do |f| %>
 
 <%= f.input :title %>
-<%= f.input :description %>
+<%= f.input :description, :input_html => { :wrap => :soft, :rows => 20}, :label => 'Type in box below:', :label_html => { :class => 'type' }  %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>

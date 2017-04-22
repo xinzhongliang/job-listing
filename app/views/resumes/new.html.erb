@@ -1,7 +1,12 @@
+<div class="container-fluid pull-left">
+  <%= link_to("Jobs", jobs_path, :class => "btn btn-lg btn-primary" ) %>
+</div>
+<br>
+
 <h3>提交履历到<%= @job.title %></h3>
 <hr>
 <%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
+  <%= f.input :content,:input_html => { :wrap => :soft, :rows => 20}, :label => 'Type in box below:', :label_html => { :class => 'type' }  %>
   <%= f.input :attachment %>
   <%= f.submit "送出" %>
 <% end %>
