@@ -24,8 +24,8 @@ ROR一年以上的工作经验 熟悉postgresql或类似关系型数据库 有�
 工作方式：远程工作
 
 日常工作以slack和GitHub进行沟通，如果需求不明或需要讨论的时候需要使用Hangout
-  },
-  wage_upper_bound: 16,000, wage_lower_bound: 12,000, is_hidden: "false"])
+},
+wage_upper_bound: 16000, wage_lower_bound: 12000, is_hidden: "false"])
 
 puts "第一个工作（Public）建立成功."
 
@@ -49,7 +49,7 @@ Job.create!([title: "Ruby on Rails 资深开发工程师", description: %{
 1. 税前 20K-30K， 13-18 薪；
 2. 五险一金、交通补贴、餐饮补贴、通讯补贴、绩效奖金、年终奖金、股票期权、弹性工作、定期体检；
 },
-wage_upper_bound: 30,000, wage_lower_bound: 13,000, is_hidden: "false"])
+wage_upper_bound: 30000, wage_lower_bound: 13000, is_hidden: "false"])
 
 puts "第二个工作（Public）建立成功."
 
@@ -86,7 +86,7 @@ Requirements:
 
   15K-30K per month
 },
-wage_upper_bound: 30,000, wage_lower_bound: 15,000, is_hidden: "false"])
+wage_upper_bound: 30000, wage_lower_bound: 15000, is_hidden: "false"])
 
 puts "第三个工作（Public）建立成功."
 
@@ -109,7 +109,7 @@ Job.create!([title: "全栈开发工程师/Ruby高级开发工程师", descripti
 
 年终奖 + (20K-30K) * 12
 },
-wage_upper_bound: 30,000, wage_lower_bound: 15,000, is_hidden: "false"])
+wage_upper_bound: 30000, wage_lower_bound: 15000, is_hidden: "false"])
 
 puts "第四个工作（Public）建立成功."
 
@@ -145,7 +145,7 @@ Job.create!([title: "全职 Ruby and Ruby On Rails 高级工程师", description
 美味可口的零食供给、愉快向上的办公环境
 轻松的团建活动——多数是看小电影、唱歌聚会
 },
-wage_upper_bound: 10,000, wage_lower_bound: 5,000, is_hidden: "false"])
+wage_upper_bound: 10000, wage_lower_bound: 5000, is_hidden: "false"])
 
 puts "第五个工作（Public）建立成功."
 
@@ -176,7 +176,7 @@ Job.create!([title: "招聘 Ruby 工程师 ( 15～ 25k)", description: %{
   第一时间尝试最新最好玩的智能硬件
   每年免费（刷脸 & 打杂）参加高端大会
 #},
-wage_upper_bound: 25,000, wage_lower_bound: 15,000, is_hidden: "true"])
+wage_upper_bound: 25000, wage_lower_bound: 15000, is_hidden: "true"])
 puts "第六个工作（Hidden）建立成功."
 
 puts "这是用种子建立的第七个工作."
@@ -203,7 +203,7 @@ Job.create!([title: "招聘Ruby工程师2人", description: %{
   公司每年组织年度旅游，举办年终活动，节日礼物，公司同事间氛围很友好；
   拥有雄厚的实力、背景 ### 朝九晚五，弹性工作 ，中途享有一小时的就餐时间；五天工作制，五险一金制；带薪法定假，带薪年休假 ###
 #},
-wage_upper_bound: 20,000, wage_lower_bound: 15,000, is_hidden: "true"])
+wage_upper_bound: 20000, wage_lower_bound: 15000, is_hidden: "true"])
 puts "第七个工作（Hidden）建立成功."
 
 
@@ -211,5 +211,5 @@ puts "第七个工作（Hidden）建立成功."
 #Job.create!([title: "    ", description: %{
 
 #},
-#wage_upper_bound: 30,000, wage_lower_bound: 15,000, is_hidden: "false"])
+#wage_upper_bound: 30000, wage_lower_bound: 15,000, is_hidden: "false"])
 #puts "第X个工作（Public）建立成功."
