@@ -2,11 +2,37 @@
 <div class="container-fluid pull-left">
   <%= link_to("Jobs", jobs_path, :class => "btn btn-lg btn-primary" ) %>
 </div>
+<div class="text-center">
+  <%= link_to("提交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+</div>
+
 <br>
 <h1><%= @job.title %> </h1>
 <p>
   <%= simple_format(@job.description) %>
 </p>
-<div class="text-center">
-  <%= link_to("提交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
-</div>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <td>发表者</td>
+      <td>内容</td>
+      <td>日期</td>
+    </tr>
+    <% @job.posts.each do |post| %>
+    <tr>
+      <td class="col-sm-1"><%= post.user.email %></td>
+      <td class="col-lg-10"><%= post.content %></td>
+      <td class="col-sm-1"><%= post.created_at.to_date %></td>
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+<%= simple_form_for [@job, @post] do |post| %>
+
+<%= post.input :content %>
+
+  <%= post.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."}  %>
+<% end %>
