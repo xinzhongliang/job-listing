@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  #before_action: authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:create]
   def index
+    @job = Job.find(params[:job_id])
     @posts = Post.all
   end
 
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
       redirect_to job_path(@job)
       flash[:notice] = "回复成功"
     else
-      render :new
+      redirect_to job_path(@job)
     end
   end
 
@@ -45,6 +45,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to job_path(@job)
     flash[:alert] = "删除成功"
+
   end
 
 

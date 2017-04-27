@@ -52,7 +52,7 @@
  }
 
  .jumbotron p {
-     margin: 0;//上下左右margin为0
+    //  margin: 0;//上下左右margin为0
      font-size: 26px;//字体大小
      //max-width: 500px;//最大宽度
      background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
@@ -293,3 +293,16 @@
   .login-help{
     font-size: 12px;
   }
+
+//-----common----
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+//-----comment table-----
+
+.post-creater {
+  color: #00f;
+
+}

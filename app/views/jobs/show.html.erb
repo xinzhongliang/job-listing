@@ -1,38 +1,54 @@
 
-<div class="container-fluid pull-left">
-  <%= link_to("Jobs", jobs_path, :class => "btn btn-lg btn-primary" ) %>
+
+<div class="container-fluid col-md-10 col-centered">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1><%= @job.title %> </h1>
+      <p>
+        <%= simple_format(@job.description) %>
+      </p>
+    </div>
+    <div>
+      <%= link_to("职位列表", jobs_path, :class => "btn btn-md btn-primary" ) %>
+      <%= link_to("提交履历", new_job_resume_path(@job), :class => "btn btn-md btn-primary" ) %>
+    </div>
+  </div>
 </div>
-<div class="text-center">
-  <%= link_to("提交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
+
+
+<div class="col-md-10 col-centered">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table post-comment">
+          <tbody>
+            <% @job.posts.each do |post| %>
+            <tr>
+              <td class="col-sm-1 "><span class="post-creater"><%= post.user.email %> 发表于  <%= post.created_at %> ：</span>
+                        <% if current_user && current_user.admin? %>
+                        <%= link_to("全部留言列表", job_posts_path(@job)) %>
+                        <td class="col-md-1"><%= link_to('删除', job_post_path(post.job, post), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-xs") %></td>
+                        <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-sm-4"><%= simple_format(post.content) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<br>
-<h1><%= @job.title %> </h1>
-<p>
-  <%= simple_format(@job.description) %>
-</p>
-
-<table class="table">
-  <tbody>
-    <tr>
-      <td>发表者</td>
-      <td>内容</td>
-      <td>日期</td>
-    </tr>
-    <% @job.posts.each do |post| %>
-    <tr>
-      <td class="col-sm-1"><%= post.user.email %></td>
-      <td class="col-lg-10"><%= post.content %></td>
-      <td class="col-sm-1"><%= post.created_at.to_date %></td>
-    </tr>
-
-    <% end %>
-  </tbody>
-</table>
-
-<%= simple_form_for [@job, @post] do |post| %>
-
-<%= post.input :content %>
-
-  <%= post.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."}  %>
-<% end %>
+<div class="col-md-10 col-centered">
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <%= simple_form_for [@job, @post] do |post| %>
+        <div class="form-group">
+          <%= post.input :content,  :input_html => { :wrap => :soft, :rows => 5}, :label => '留言内容:', :label_html => { :class => 'type' }   %>
+        </div>
+          <%= post.submit "确认", class: "btn btn-primary", data: { disable_with: "Submitting..."}  %>
+        <% end %>
+    </div>
+  </div>
+</div>
