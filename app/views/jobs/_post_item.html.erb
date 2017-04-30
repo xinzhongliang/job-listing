@@ -1,0 +1,4 @@
+<%= simple_form_for [@job, @post] do |post| %>
+<%= post.input :content %>
+  <%= post.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..."}  %>
+<% end %>

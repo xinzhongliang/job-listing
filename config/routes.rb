@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :resumes
     resources :posts
   end
-
+  
   namespace :admin do
     resources :jobs do
       member do

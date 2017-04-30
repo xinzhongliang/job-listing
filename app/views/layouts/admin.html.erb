@@ -7,27 +7,24 @@
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
-    <body>
+
+    <body class="col-centered">
       <%= render "common/navbar" %>
       <%= render "common/flashes" %>
-        <div class="container">
-
-            <div class="row">
-              <div class="">
-                <div class="btn-group" role="group" >
-                  <button class="btn btn-default"><%= link_to("管理职位列表", admin_jobs_path) %></button>
-                  <button class="btn btn-default"><%= link_to("职位空缺列表", jobs_path) %></button>
-                  <button class="btn btn-default"><%= link_to("新增职位", new_admin_job_path)%></button>
-                </div>
-              </div>
-
-              <div class="col-md-10">
-                <%= yield %>
-              </div>
-           </div>
+      <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="btn-group" role="group" >
+              <button class="btn btn-default"><%= link_to("管理职位列表", admin_jobs_path) %></button>
+              <button class="btn btn-default"><%= link_to("职位空缺列表", jobs_path) %></button>
+              <button class="btn btn-default"><%= link_to("新增职位", new_admin_job_path)%></button>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= yield %>
+          </div>
         </div>
-
+      </div>
         <%= render "common/footer" %>
-
     </body>
 </html>
