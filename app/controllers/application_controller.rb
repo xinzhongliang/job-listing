@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+  before_filter :set_search
+
+  def set_search
+  @q= Job.search(params[:q])
+  end
+
 end

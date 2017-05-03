@@ -2,10 +2,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>
-          职位列表
-          <% if current_user && current_user.admin? %>
-          <%= link_to("管理职位列表", admin_jobs_path, :class => "btn btn-md btn-primary" ) %>
-          <% end %>
+            职位列表
+            <span class="col-md-offset-2">
+              <%= link_to("全部职位列表", jobs_path) %>
+            </span>
           <div class="dropdown clearfix pull-right">
             <button class="btn btn-md btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               排序
@@ -13,13 +13,14 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
               <li>
-                <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                <%= sort_link @q, :wage_lower_bound, "按照薪资下限排序" %>
+
               </li>
               <li>
-                <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                <%= sort_link @q, :wage_upper_bound, "按照薪资上限排序" %>
               </li>
               <li>
-                <%= link_to("按照发表时间排序", jobs_path) %>
+                <%= sort_link @q, :created_at, "按照创建时间顺序" %>
               </li>
             </ul>
           </div>
@@ -33,6 +34,8 @@
               <td>薪资下限</td>
               <td>薪资上限</td>
               <td>城市坐标</td>
+              <td>分类</td>
+              <td>公司</td>
               <td>刊登时间</td>
             </tr>
           </thead>
@@ -50,6 +53,12 @@
               </td>
               <td>
                 <%= job.city %>
+              </td>
+              <td>
+                <%= job.category %>
+              </td>
+              <td>
+                <%= job.company %>
               </td>
               <td>
                 <%= job.created_at.to_date %>

@@ -1,15 +1,37 @@
-<h1> 新增职位 </h1>
 
-<%= simple_form_for @job do |f| %>
+<div class="container-fluid col-md-10 col-centered">
+  <div class="panel panel-default">
+    <div class="panel panel-heading">
+      <h1> 新增职位 </h1>
+    </div>
+    <div class="panel-body">
+      <%= simple_form_for @job do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :wage_lower_bound, :label => "薪资下限" %>
+      <%= f.input :wage_upper_bound, :label => "薪资上限" %>
+      <%= f.input :contact_email %>
+      <%= f.input :city %>
+      <%= f.input :is_hidden %>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :city %>
-<%= f.input :is_hidden %>
 
-
-  <%= f.submit "Submit" %>
-<% end %>
+<!-- <div class="container-fluid col-md-10 col-centered">
+  <div class="panel panel-default">
+    <div class="panel panel-heading">
+      <h1> 新增职位 </h1>
+    </div>
+    <div class="panel-body">
+      <%= simple_form_for @job do |f| %>
+        <%= f.input :title, wrapper_html: { class: 'username' } %>
+        <%= f.input :description, wrapper_html: { id: 'password' } %>
+        <%= f.input :contact_email, wrapper_html: { class: 'options' } %>
+        <%= f.button :submit, :label => "薪资上限"  %>
+      <% end %>
+    </div>
+  </div>
+</div> -->

@@ -1,10 +1,12 @@
 class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
+
   layout "admin"
 
-  def show
-    @job = Job.find(params[:id])
+  def index
+     @q = Job.ransack(params[:q])
+     @jobs = @q.result(distinct: true)
   end
 
   def index
@@ -17,6 +19,10 @@ class Admin::JobsController < ApplicationController
 
   def new
     @job = Job.new
+  end
+
+  def show
+    @job = Job.find(params[:id])
   end
 
   def create
@@ -55,6 +61,8 @@ class Admin::JobsController < ApplicationController
     @job.hide!
     redirect_to :back
   end
+
+
 
   private
 

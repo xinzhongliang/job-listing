@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170430081711) do
     t.string   "contact_email"
     t.boolean  "is_hidden",        default: true
     t.string   "city"
+    t.string   "company"
+    t.string   "category"
   end
 
   create_table "posts", force: :cascade do |t|

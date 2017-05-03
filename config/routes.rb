@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :resumes
     resources :posts
+    collection do
+                get :search
+              end
   end
-  
+
   namespace :admin do
     resources :jobs do
       member do
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
         post :hide
       end
       resources :resumes
+
     end
   end
   root "welcome#index"

@@ -4,8 +4,20 @@
     <%= simple_format(@job.description) %>
   </p>
   <div>
+    <td>
+      城市：
+      <%= @job.city %>
+    </td>
 
-    城市：
-    <%= @job.city %>
+    <td>
+      公司：
+      <%= @job.company %>
+    </td>
+    <td>
+      分类：
+      <%= @job.category %>
+    </td>
   </div>
+
+
 </div>

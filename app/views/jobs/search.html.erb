@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="search-page" class="container-fluid jobs-show-page">
+      <div class="col-md-10 col-md-offset-1">
+        <br>
+        <div class="pull-right">
+          <%= link_to(content_tag(:i, " 查看所有职位", class: "fa fa-reply-all"), jobs_path) %> |
+          <%= link_to(content_tag(:i, "返回", class: "fa fa-arrow-left"), url_for(:back)) %>
+        </div>
+
+        <% if @jobs.blank?%>
+        <br>
+          <div>
+            抱歉! 没有相关记录，请重新输入关键字...
+          </div>
+        <% else %>
+          <h3>已查询到 <%= @jobs.count %> 个职位信息</h3>
+          <div class="divider"></div>
+          <%= render :partial => "jobs_item", :collection => @jobs, :as => :job %>
+          <div class="text-center">
+            <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+  </div>
+</div>
